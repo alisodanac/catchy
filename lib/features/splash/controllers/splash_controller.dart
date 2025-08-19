@@ -128,7 +128,7 @@ class SplashController extends GetxController implements GetxService {
     update();
   }
 
-  _mainConfigRouting() async {
+  Future<void> _mainConfigRouting() async {
     if (Get.find<AuthController>().isLoggedIn()) {
       Get.find<AuthController>().updateToken();
       if(Get.find<SplashController>().module != null) {
@@ -157,7 +157,7 @@ class SplashController extends GetxController implements GetxService {
 
   }
 
-  _prepareLandingModel(LandingModel? landingModel) {
+  void _prepareLandingModel(LandingModel? landingModel) {
     if(landingModel != null) {
       _landingModel = landingModel;
       hoverStates = List<bool>.generate(_landingModel!.availableZoneList!.length, (index) => false);
@@ -246,7 +246,7 @@ class SplashController extends GetxController implements GetxService {
 
   }
 
-  _prepareModuleList(List<ModuleModel>? moduleList) {
+  void _prepareModuleList(List<ModuleModel>? moduleList) {
     if (moduleList != null) {
       _moduleList = [];
       for (var module in moduleList) {
@@ -345,7 +345,7 @@ class SplashController extends GetxController implements GetxService {
     update();
   }
 
-  getCookiesData(){
+  void getCookiesData(){
     _savedCookiesData = splashServiceInterface.getSavedCookiesData();
     update();
   }

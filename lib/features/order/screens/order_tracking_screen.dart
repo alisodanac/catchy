@@ -61,7 +61,7 @@ class OrderTrackingScreenState extends State<OrderTrackingScreen>
     _timerTrackOrder();
   }
 
-  _timerTrackOrder() {
+  void _timerTrackOrder() {
     if (Get.find<OrderController>().trackModel?.orderStatus != 'delivered' &&
         Get.find<OrderController>().trackModel?.orderStatus != 'failed' &&
         Get.find<OrderController>().trackModel?.orderStatus != 'canceled') {

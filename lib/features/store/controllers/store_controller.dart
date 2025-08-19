@@ -222,7 +222,7 @@ class StoreController extends GetxController implements GetxService {
     }
   }
 
-  _prepareStoreModel(StoreModel? storeModel, int offset) {
+  void _prepareStoreModel(StoreModel? storeModel, int offset) {
     if (storeModel != null) {
       if (offset == 1) {
         _storeModel = storeModel;
@@ -360,7 +360,7 @@ class StoreController extends GetxController implements GetxService {
 
   }
 
-  _prepareFeaturedStore(List<Store>? stores) {
+  void _prepareFeaturedStore(List<Store>? stores) {
     if (stores != null) {
       _featuredStoreList = [];
       List<Modules> moduleList = [];
@@ -394,7 +394,7 @@ class StoreController extends GetxController implements GetxService {
 
   }
 
-  _prepareVisitAgainStore(List<Store>? stores) {
+  void _prepareVisitAgainStore(List<Store>? stores) {
     if (stores != null) {
       _visitAgainStoreList = [];
       List<Modules> moduleList = [];
@@ -478,7 +478,7 @@ class StoreController extends GetxController implements GetxService {
     }
   }
 
-  _prepareRecommendedStores(List<Store>? recommendedStoreList) {
+  void _prepareRecommendedStores(List<Store>? recommendedStoreList) {
     if (recommendedStoreList != null) {
       _recommendedStoreList = [];
       _recommendedStoreList!.addAll(recommendedStoreList);

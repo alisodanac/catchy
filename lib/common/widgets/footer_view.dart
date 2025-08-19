@@ -294,7 +294,7 @@ class _FooterViewState extends State<FooterView> {
     ]);
   }
 
-  _launchURL(String url) async {
+  Future<void> _launchURL(String url) async {
     if (await canLaunchUrlString(url)) {
       await launchUrlString(url, mode: LaunchMode.externalApplication);
     } else {

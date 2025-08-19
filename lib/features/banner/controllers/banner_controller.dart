@@ -96,7 +96,7 @@ class BannerController extends GetxController implements GetxService {
     }
   }
 
-  _prepareBanner(BannerModel? bannerModel) async{
+  Future<void> _prepareBanner(BannerModel? bannerModel) async{
     if (bannerModel != null) {
       _bannerImageList = [];
       _bannerDataList = [];
@@ -176,7 +176,7 @@ class BannerController extends GetxController implements GetxService {
     }
   }
 
-  _prepareParcelBanner(ParcelOtherBannerModel? parcelOtherBannerModel) {
+  void _prepareParcelBanner(ParcelOtherBannerModel? parcelOtherBannerModel) {
     if (parcelOtherBannerModel != null) {
       _parcelOtherBannerModel = parcelOtherBannerModel;
     }

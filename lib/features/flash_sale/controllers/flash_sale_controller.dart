@@ -56,7 +56,7 @@ class FlashSaleController extends GetxController implements GetxService {
     }
   }
 
-  _prepareFlashModel(FlashSaleModel? flashSaleModel) {
+  void _prepareFlashModel(FlashSaleModel? flashSaleModel) {
     if (flashSaleModel != null) {
       _flashSaleModel = flashSaleModel;
       if(_flashSaleModel?.endDate != null) {

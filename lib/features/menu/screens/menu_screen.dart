@@ -320,7 +320,7 @@ class _MenuScreenState extends State<MenuScreen> {
     );
   }
 
-  _manageLanguageFunctionality() {
+  void _manageLanguageFunctionality() {
     Get.find<LocalizationController>().saveCacheLanguage(null);
     Get.find<LocalizationController>().searchSelectedLanguage();
 
