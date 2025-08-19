@@ -237,12 +237,16 @@ class _CartScreenState extends State<CartScreen> {
 
                 onIsExtendedCallback: () {
                   ///Don't remove this print.
-                  print('======= expandableContent open');
+                  if (kDebugMode) {
+                    print('======= expandableContent open');
+                  }
                   _getExpandedBottomSheetHeight();
                 },
                 onIsContractedCallback: () {
                   ///Don't remove this print.
-                  print('======= expandableContent close');
+                  if (kDebugMode) {
+                    print('======= expandableContent close');
+                  }
                   setState(() {
                     _height = 0;
                   });

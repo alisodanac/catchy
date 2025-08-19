@@ -73,13 +73,14 @@ class _PromoCodeBannerViewState extends State<PromoCodeBannerView> {
                       const SizedBox(height: Dimensions.paddingSizeSmall),
 
                       DottedBorder(
-                        color: Theme.of(context).primaryColor,
-                        strokeWidth: 1,
-                        strokeCap: StrokeCap.butt,
-                        dashPattern: const [5, 5],
-                        padding: const EdgeInsets.all(0),
-                        borderType: BorderType.RRect,
-                        radius: const Radius.circular(50),
+                        options: RoundedRectDottedBorderOptions(
+                          radius: const Radius.circular(50),
+                          color: Theme.of(context).primaryColor,
+                          strokeWidth: 1,
+                          strokeCap: StrokeCap.butt,
+                          dashPattern: const [5, 5],
+                          padding: const EdgeInsets.all(0),
+                        ),
                         child: Container(
                           height: 35, width: 130,
                           alignment: Alignment.center,
