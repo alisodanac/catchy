@@ -91,5 +91,16 @@
 	</array>
 	<key>io.flutter.embedded_views_preview</key>
 	<string>YES</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use your location while the app is in use to show nearby stores and improve map directions.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We may also need your location in the background to send arrival alerts and update live tracking.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_http._tcp</string>
+		<string>_https._tcp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app needs access to local network services to discover and communicate with devices on your network.</string>
 </dict>
 </plist>

@@ -54,7 +54,7 @@ dependencies:
   animated_flip_counter: ^0.3.4
   youtube_player_iframe: ^5.1.5
   card_swiper: ^3.0.1
-  audioplayers: ^6.1.0
+  audioplayers: ^6.5.0
   video_player: ^2.9.1
   flutter_svg: ^2.2.0
   flutter_widget_from_html_core: ^0.17.0
@@ -86,7 +86,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.14.4"
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
   drift_dev: ^2.21.2
   build_runner: ^2.4.13
 flutter_launcher_icons:
