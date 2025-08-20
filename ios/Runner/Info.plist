@@ -102,5 +102,7 @@
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>This app needs access to local network services to discover and communicate with devices on your network.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
 </dict>
 </plist>
