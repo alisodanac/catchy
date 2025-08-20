@@ -60,7 +60,7 @@ class _CustomFavouriteWidgetState extends State<CustomFavouriteWidget> with Sing
     );
   }
 
-  _decideWished(bool isWished, FavouriteController favouriteController) {
+  void _decideWished(bool isWished, FavouriteController favouriteController) {
     if(widget.isStore) {
       isWished ? favouriteController.removeFromFavouriteList(widget.storeId ?? widget.store?.id, true)
           : favouriteController.addToFavouriteList(null, widget.storeId ?? widget.store?.id, true);

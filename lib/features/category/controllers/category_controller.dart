@@ -79,7 +79,7 @@ class CategoryController extends GetxController implements GetxService {
     }
   }
 
-  _prepareCategoryList(List<CategoryModel>? categoryList) {
+  void _prepareCategoryList(List<CategoryModel>? categoryList) {
     if (categoryList != null) {
       _categoryList = [];
       _interestSelectedList = [];

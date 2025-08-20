@@ -7,7 +7,6 @@ import 'package:sixam_mart/features/notification/domain/models/notification_body
 import 'package:sixam_mart/helper/address_helper.dart';
 import 'package:sixam_mart/helper/auth_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/images.dart';
 import 'package:sixam_mart/common/widgets/no_internet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,18 +29,25 @@ class SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     bool firstTime = true;
-    _onConnectivityChanged = Connectivity().onConnectivityChanged.listen((List<ConnectivityResult> result) {
-      bool isConnected = result.contains(ConnectivityResult.wifi) || result.contains(ConnectivityResult.mobile);
+    _onConnectivityChanged = Connectivity()
+        .onConnectivityChanged
+        .listen((List<ConnectivityResult> result) {
+      bool isConnected = result.contains(ConnectivityResult.wifi) ||
+          result.contains(ConnectivityResult.mobile);
 
-      if(!firstTime) {
-        isConnected ? ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar() : const SizedBox();
+      if (!firstTime) {
+        isConnected
+            ? ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar()
+            : const SizedBox();
         ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(
           backgroundColor: isConnected ? Colors.green : Colors.red,
           duration: Duration(seconds: isConnected ? 3 : 6000),
-          content: Text(isConnected ? 'connected'.tr : 'no_connection'.tr, textAlign: TextAlign.center),
+          content: Text(isConnected ? 'connected'.tr : 'no_connection'.tr,
+              textAlign: TextAlign.center),
         ));
-        if(isConnected) {
-          Get.find<SplashController>().getConfigData(notificationBody: widget.body);
+        if (isConnected) {
+          Get.find<SplashController>()
+              .getConfigData(notificationBody: widget.body);
         }
       }
 
@@ -49,12 +55,12 @@ class SplashScreenState extends State<SplashScreen> {
     });
 
     Get.find<SplashController>().initSharedData();
-    if((AuthHelper.getGuestId().isNotEmpty || AuthHelper.isLoggedIn()) && Get.find<SplashController>().cacheModule != null) {
+    if ((AuthHelper.getGuestId().isNotEmpty || AuthHelper.isLoggedIn()) &&
+        Get.find<SplashController>().cacheModule != null) {
       Get.find<CartController>().getCartDataOnline();
     }
     // _route();
     Get.find<SplashController>().getConfigData(notificationBody: widget.body);
-
   }
 
   @override
@@ -158,7 +164,8 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Get.find<SplashController>().initSharedData();
-    if(AddressHelper.getUserAddressFromSharedPref() != null && AddressHelper.getUserAddressFromSharedPref()!.zoneIds == null) {
+    if (AddressHelper.getUserAddressFromSharedPref() != null &&
+        AddressHelper.getUserAddressFromSharedPref()!.zoneIds == null) {
       Get.find<AuthController>().clearSharedAddress();
     }
 
@@ -166,16 +173,20 @@ class SplashScreenState extends State<SplashScreen> {
       key: _globalKey,
       body: GetBuilder<SplashController>(builder: (splashController) {
         return Center(
-          child: splashController.hasConnection ? Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('Catchy', style: robotoBold.copyWith(
-                fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).primaryColor,
-              )),
-              //Image.asset(Images.logo, width: 200),
-              const SizedBox(height: Dimensions.paddingSizeSmall),
-            ],
-          ) : NoInternetScreen(child: SplashScreen(body: widget.body)),
+          child: splashController.hasConnection
+              ? Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Catchy',
+                        style: robotoBold.copyWith(
+                          fontSize: Dimensions.fontSizeExtraLarge,
+                          color: Theme.of(context).primaryColor,
+                        )),
+                    //Image.asset(Images.logo, width: 200),
+                    const SizedBox(height: Dimensions.paddingSizeSmall),
+                  ],
+                )
+              : NoInternetScreen(child: SplashScreen(body: widget.body)),
         );
       }),
     );

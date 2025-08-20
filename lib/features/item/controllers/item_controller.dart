@@ -585,7 +585,7 @@ class ItemController extends GetxController implements GetxService {
     }
   }
 
-  _prepareRecommendedItems(List<Item>? items) {
+  void _prepareRecommendedItems(List<Item>? items) {
     if (items != null) {
       _recommendedItemList = [];
       _recommendedItemList!.addAll(items);

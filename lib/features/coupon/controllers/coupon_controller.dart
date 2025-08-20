@@ -74,7 +74,7 @@ class CouponController extends GetxController implements GetxService {
     return _discount;
   }
 
-  _processFreeDeliveryCoupon(double deliveryCharge, double order) {
+  void _processFreeDeliveryCoupon(double deliveryCharge, double order) {
     if(deliveryCharge > 0) {
       if (_coupon!.minPurchase! <= order) {
         _discount = 0;
@@ -91,7 +91,7 @@ class CouponController extends GetxController implements GetxService {
     }
   }
 
-  _processCoupon(double order) {
+  void _processCoupon(double order) {
     if (_coupon!.minPurchase != null && _coupon!.minPurchase! <= order) {
       if (_coupon!.discountType == 'percent') {
         if (_coupon!.maxDiscount != null && _coupon!.maxDiscount! > 0) {

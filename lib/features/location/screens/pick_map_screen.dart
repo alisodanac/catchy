@@ -57,7 +57,7 @@ class _PickMapScreenState extends State<PickMapScreen> {
     _checkAlreadyLocationEnable();
   }
 
-  _checkAlreadyLocationEnable() async {
+  Future<void> _checkAlreadyLocationEnable() async {
     LocationPermission permission = await Geolocator.checkPermission();
     if(permission == LocationPermission.whileInUse) {
       locationAlreadyAllow = true;

@@ -45,7 +45,7 @@ class _GetServiceVideoWidgetState extends State<GetServiceVideoWidget> {
     super.initState();
   }
 
-  configureForMp4(String videoUrl) {
+  void configureForMp4(String videoUrl) {
     _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(videoUrl))
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.

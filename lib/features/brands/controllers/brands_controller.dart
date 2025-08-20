@@ -36,7 +36,7 @@ class BrandsController extends GetxController implements GetxService {
 
   }
 
-  _prepareBandList(List<BrandModel>? brandList) {
+  void _prepareBandList(List<BrandModel>? brandList) {
     if (brandList != null) {
       _brandList = [];
       _brandList!.addAll(brandList);
